@@ -70,13 +70,13 @@ calc_clumped_tables <- function(seating){
   # be good!
   
   clumps <- 
-    (sum(plan[1:4] == "F") %in% c(0, 4)) +
-    (sum(plan[5:8] == "F") %in% c(0, 4)) +
-    (sum(plan[9:12] == "F") %in% c(0, 4)) +
-    (sum(plan[13:16] == "F") %in% c(0, 4)) +
-    (sum(plan[17:20] == "F") %in% c(0, 4)) +
-    (sum(plan[21:24] == "F") %in% c(0, 4)) +
-    (sum(plan[25:28] == "F") %in% c(0, 4))
+    (sum(plan[1:4] == "F") == 4) +
+    (sum(plan[5:8] == "F") == 4) +
+    (sum(plan[9:12] == "F") == 4) +
+    (sum(plan[13:16] == "F") == 4) +
+    (sum(plan[17:20] == "F") == 4) +
+    (sum(plan[21:24] == "F") == 4) +
+    (sum(plan[25:28] == "F") == 4)
   
   return(clumps)
 }
@@ -115,5 +115,40 @@ sim %>%
 ```
 
 
+```{r}
 
+sim %>% 
+  filter(clumps == "3") %>% 
+  nrow()
+
+
+
+sim %>% nrow()
+
+```
+
+```{r}
+
+sim %>% 
+  filter(clumps == "4") %>% 
+  nrow()
+
+```
+
+
+```{r}
+sim %>% 
+  filter(clumps == "2") %>% 
+  nrow()
+```
+
+```{r}
+
+sim %>% 
+  filter(clumps == "2") %>% 
+  nrow()
+
+105/10000
+
+```
 
